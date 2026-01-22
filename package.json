@@ -1,0 +1,27 @@
+{
+  "name": "feedback-pulse",
+  "version": "1.0.0",
+  "description": "Cloudflare PM Intern Assignment - Feedback Analysis System",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "db:create": "wrangler d1 create feedback-pulse-db",
+    "db:init": "wrangler d1 execute feedback-pulse-db --file=./src/schema.sql",
+    "db:query": "wrangler d1 execute feedback-pulse-db --command"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "d1",
+    "workers-ai",
+    "feedback-analysis"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.80.0"
+  },
+  "dependencies": {}
+}

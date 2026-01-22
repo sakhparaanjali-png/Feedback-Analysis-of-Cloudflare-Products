@@ -1,0 +1,39 @@
+name = "feedback-pulse"
+main = "src/index.js"
+compatibility_date = "2024-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# Workers AI binding
+[ai]
+binding = "AI"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "feedback-pulse-db"
+database_id = "YOUR_DATABASE_ID"  # Replace after creating D1 database
+
+# Uncomment to use Workflows (optional)
+# [[workflows]]
+# binding = "WORKFLOW"
+# name = "feedback-analysis-workflow"
+# script_name = "feedback-pulse"
+
+# Uncomment to use AI Search / Vectorize (optional)
+# [[vectorize]]
+# binding = "VECTORIZE"
+# index_name = "feedback-embeddings"
+
+# Environment variables (optional)
+[vars]
+ENVIRONMENT = "production"
+
+# Development configuration
+[env.development]
+name = "feedback-pulse-dev"
+vars = { ENVIRONMENT = "development" }
+
+# Staging configuration
+[env.staging]
+name = "feedback-pulse-staging"
+vars = { ENVIRONMENT = "staging" }
